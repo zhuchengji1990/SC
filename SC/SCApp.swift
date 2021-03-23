@@ -12,6 +12,10 @@ struct SCApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(Store.shared)
+                .onAppear{
+                    Store.shared.run()
+                }
         }
     }
 }

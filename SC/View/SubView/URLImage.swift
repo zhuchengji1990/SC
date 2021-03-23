@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import KingfisherSwiftUI
+import Kingfisher
 
 struct URLImage: View {
     var url: String?
@@ -25,7 +25,6 @@ struct URLImage: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(width: geo.size.width, height: geo.size.height)
                         .cornerRadius(self.radius)
-                        .overlay(Circle().stroke(lineWidth: 2).foregroundColor(Color.white))
                 }else{
                     Image(systemName: "person.crop.circle")
                         .resizable()

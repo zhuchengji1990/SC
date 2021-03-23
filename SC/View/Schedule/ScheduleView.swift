@@ -8,13 +8,28 @@
 import SwiftUI
 
 struct ScheduleView: View {
+    
+    @EnvironmentObject var store: Store
+    var binding: Binding<AppState.Post>{
+        $store.appState.post
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        List{
+            ForEach(binding.array.wrappedValue
+                        .filter{ $0.get("type")?.stringValue == Store.PublishType.schedule.rawValue },
+                    id: \.self){ obj in
+                
+                PostCell(obj: obj)
+            }
+        }.listStyle(PlainListStyle())
+        .navigationBarTitle("待办事项", displayMode: .inline)
     }
 }
 
 struct ScheduleView_Previews: PreviewProvider {
     static var previews: some View {
-        ScheduleView()
+        ScheduleView().environmentObject(Store.shared)
     }
 }

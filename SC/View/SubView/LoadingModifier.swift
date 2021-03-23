@@ -42,7 +42,7 @@ struct LoadingModifier: ViewModifier{
 //调用方式二：Text("").loading(isShowing: self.$store.appState.hud.isShowing)
 //支持任意视图
 extension View{
-    func loading(isShowing: Binding<Bool>, title: Binding<String> = .constant("Loading")) -> some View{
+    func loading(isShowing: Binding<Bool>, title: Binding<String> = .constant("加载中")) -> some View{
         self.modifier(LoadingModifier(isShowing: isShowing, title: title))
     }
 }
