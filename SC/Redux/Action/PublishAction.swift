@@ -14,6 +14,7 @@ extension Store{
     enum PublishType: String{
         case confession
         case schedule
+        case announcement
     }
     
     

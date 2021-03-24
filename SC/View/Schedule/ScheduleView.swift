@@ -16,15 +16,9 @@ struct ScheduleView: View {
     
     var body: some View {
         
-        List{
-            ForEach(binding.array.wrappedValue
-                        .filter{ $0.get("type")?.stringValue == Store.PublishType.schedule.rawValue },
-                    id: \.self){ obj in
-                
-                PostCell(obj: obj)
-            }
-        }.listStyle(PlainListStyle())
-        .navigationBarTitle("待办事项", displayMode: .inline)
+        PostView(array: binding.array.wrappedValue
+                    .filter{ $0.get("type")?.stringValue == Store.PublishType.schedule.rawValue })
+            .navigationBarTitle("待办事项", displayMode: .inline)
     }
 }
 

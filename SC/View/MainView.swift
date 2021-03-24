@@ -24,6 +24,7 @@ struct MainView: View {
         
         case confession
         case schedule
+        case announcement
         
         case none
     }
@@ -52,6 +53,9 @@ struct MainView: View {
                 Button("发布待办事项", action: {
                     self.sheetItem = .schedule
                 })
+                Button("发布公告", action: {
+                    self.sheetItem = .announcement
+                })
             } label: {
                 Image(systemName: "plus.circle")
             })
@@ -64,6 +68,8 @@ struct MainView: View {
                     PublishConfessionView()
                 case .schedule:
                     PublishScheduleView()
+                case .announcement:
+                    PublishAnnouncementView()
                 default:
                     EmptyView()
                 }

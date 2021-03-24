@@ -34,6 +34,10 @@
 		AB7D9744260A17E7000052F2 /* PublishScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7D9743260A17E7000052F2 /* PublishScheduleView.swift */; };
 		AB7D9748260A18F5000052F2 /* PublishAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7D9747260A18F5000052F2 /* PublishAction.swift */; };
 		AB7D974C260A2091000052F2 /* DataAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7D974B260A2091000052F2 /* DataAction.swift */; };
+		AB864FD5260B7EFD009BCBAA /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB864FD4260B7EFD009BCBAA /* PostCell.swift */; };
+		AB864FD8260B80A3009BCBAA /* PublishAnnouncementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB864FD7260B80A3009BCBAA /* PublishAnnouncementView.swift */; };
+		AB864FDC260B8DA3009BCBAA /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB864FDB260B8DA3009BCBAA /* PostView.swift */; };
+		AB864FDF260B8E3B009BCBAA /* AnnouncementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB864FDE260B8E3B009BCBAA /* AnnouncementView.swift */; };
 		E531966B9B2F8206539E86D6 /* Pods_SC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 212E1E33CE1649CC4F33557B /* Pods_SC.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +73,10 @@
 		AB7D9743260A17E7000052F2 /* PublishScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishScheduleView.swift; sourceTree = "<group>"; };
 		AB7D9747260A18F5000052F2 /* PublishAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishAction.swift; sourceTree = "<group>"; };
 		AB7D974B260A2091000052F2 /* DataAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAction.swift; sourceTree = "<group>"; };
+		AB864FD4260B7EFD009BCBAA /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		AB864FD7260B80A3009BCBAA /* PublishAnnouncementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishAnnouncementView.swift; sourceTree = "<group>"; };
+		AB864FDB260B8DA3009BCBAA /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		AB864FDE260B8E3B009BCBAA /* AnnouncementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementView.swift; sourceTree = "<group>"; };
 		B65503872B02F5201DE9BFF6 /* Pods-SC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SC.debug.xcconfig"; path = "Target Support Files/Pods-SC/Pods-SC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,13 +190,13 @@
 		AB54171A2608BA780084B7FA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AB54171B2608BA810084B7FA /* SubView */,
 				AB7D9737260A1234000052F2 /* Publish */,
 				AB54172D2608BEF70084B7FA /* MyCenter */,
 				AB54172B2608BEDC0084B7FA /* Confession */,
 				AB54172C2608BEF20084B7FA /* Schedule */,
 				AB54172A2608BE920084B7FA /* Home */,
 				AB5417272608BDE40084B7FA /* MainView.swift */,
-				AB54171B2608BA810084B7FA /* SubView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -203,6 +211,8 @@
 				AB5417452608D9B40084B7FA /* MButton.swift */,
 				AB5417482608D9BA0084B7FA /* CloseBtn.swift */,
 				AB7D973F260A15EF000052F2 /* ImagePickerView.swift */,
+				AB864FD4260B7EFD009BCBAA /* PostCell.swift */,
+				AB864FDB260B8DA3009BCBAA /* PostView.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -211,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				AB54172E2608BF040084B7FA /* HomeView.swift */,
+				AB864FDE260B8E3B009BCBAA /* AnnouncementView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -246,6 +257,7 @@
 			children = (
 				AB7D9738260A1255000052F2 /* PublishConfessionView.swift */,
 				AB7D9743260A17E7000052F2 /* PublishScheduleView.swift */,
+				AB864FD7260B80A3009BCBAA /* PublishAnnouncementView.swift */,
 			);
 			path = Publish;
 			sourceTree = "<group>";
@@ -377,7 +389,9 @@
 				AB5417432608D98A0084B7FA /* LoginView.swift in Sources */,
 				AB7D974C260A2091000052F2 /* DataAction.swift in Sources */,
 				AB5417362608BF200084B7FA /* ScheduleView.swift in Sources */,
+				AB864FDC260B8DA3009BCBAA /* PostView.swift in Sources */,
 				AB54172F2608BF040084B7FA /* HomeView.swift in Sources */,
+				AB864FD5260B7EFD009BCBAA /* PostCell.swift in Sources */,
 				AB5416FD2608BA1E0084B7FA /* SCApp.swift in Sources */,
 				AB7D9740260A15EF000052F2 /* ImagePickerView.swift in Sources */,
 				AB5417522608DADF0084B7FA /* WebView.swift in Sources */,
@@ -386,7 +400,9 @@
 				AB54174F2608DACF0084B7FA /* PrivacyPolicyView.swift in Sources */,
 				AB5417122608BA4E0084B7FA /* AppState.swift in Sources */,
 				AB5417462608D9B40084B7FA /* MButton.swift in Sources */,
+				AB864FD8260B80A3009BCBAA /* PublishAnnouncementView.swift in Sources */,
 				AB54174C2608DA960084B7FA /* LoadingModifier.swift in Sources */,
+				AB864FDF260B8E3B009BCBAA /* AnnouncementView.swift in Sources */,
 				AB5417332608BF130084B7FA /* ConfessionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

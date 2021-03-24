@@ -22,6 +22,9 @@ struct URLImage: View {
                     KFImage(url)
                         .resizable()
                         .cancelOnDisappear(true)
+                        .placeholder {
+                            Color(.secondarySystemBackground)
+                        }
                         .aspectRatio(contentMode: .fill)
                         .frame(width: geo.size.width, height: geo.size.height)
                         .cornerRadius(self.radius)
