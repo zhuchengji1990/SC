@@ -16,13 +16,38 @@ struct MyCenterView: View {
     
     var body: some View {
         
-        
-        
-        VStack(spacing: 0){
-            InfoView()
-            
-            
-            List{
+        ScrollView{
+            VStack(spacing: 10){
+                
+                InfoView()
+                
+                HStack{
+                    NavigationLink(destination: AnnouncementView()){
+                        TypeCell(title: "学校公告", imgName: "bell", color: Color(.systemRed))
+                    }
+                    Spacer()
+                    TypeCell(title: "成绩查询", imgName: "bell", color: Color(.systemOrange))
+                    Spacer()
+                    
+                    TypeCell(title: "课程", imgName: "bell", color: Color(.systemYellow))
+                    
+                    Spacer()
+                    TypeCell(title: "调温", imgName: "bell", color: Color(.systemGreen))
+                }.padding(.horizontal, 20)
+                
+                HStack{
+                    
+                    TypeCell(title: "待办事项", imgName: "bell", color: Color(.systemTeal))
+                    Spacer()
+                    TypeCell(title: "请假", imgName: "bell", color: Color(.systemPurple))
+                    Spacer()
+                    TypeCell(title: "表白", imgName: "bell", color: Color(.systemBlue))
+                    Spacer()
+                    TypeCell(title: "报修", imgName: "bell", color: Color(.systemIndigo))
+                    
+                }.padding(.horizontal, 20)
+                
+                
                 
                 InfoCell(title: "设置", imgName: "gear")
                 if binding.isLogin.wrappedValue{
@@ -32,17 +57,12 @@ struct MyCenterView: View {
                         }
                 }
                 
-            }.listStyle(PlainListStyle())
+            }
             
-        }
-        
-        
-        
-        
-        
-        
+        }.listStyle(PlainListStyle())
         
         .navigationBarTitle("我的", displayMode: .inline)
+        
     }
 }
 
@@ -81,9 +101,6 @@ private struct InfoView: View{
             
         }.frame(maxWidth: .infinity)
         .contentShape(Rectangle())
-        
-        
-        
     }
     
     var loggedInView: some View{
@@ -117,8 +134,8 @@ private struct InfoView: View{
                 unloggedInView
             }
             
-        }.padding(.horizontal,30)
-        .padding(.vertical, 50)
+        }.padding([.horizontal, .top],30)
+        .padding(.bottom, 20)
         .onTapGesture {
             if !binding.isLogin.wrappedValue{
                 self.isLoginPresented.toggle()

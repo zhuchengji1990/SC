@@ -27,6 +27,7 @@
 		AB54174F2608DACF0084B7FA /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB54174E2608DACF0084B7FA /* PrivacyPolicyView.swift */; };
 		AB5417522608DADF0084B7FA /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5417512608DADF0084B7FA /* WebView.swift */; };
 		AB5417552608DC2E0084B7FA /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5417542608DC2E0084B7FA /* URLImage.swift */; };
+		AB74BFF5260CEADF00886EC9 /* ArrowImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB74BFF4260CEADF00886EC9 /* ArrowImg.swift */; };
 		AB7D9735260A09D8000052F2 /* UserAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7D9734260A09D8000052F2 /* UserAction.swift */; };
 		AB7D9739260A1255000052F2 /* PublishConfessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7D9738260A1255000052F2 /* PublishConfessionView.swift */; };
 		AB7D973D260A1306000052F2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7D973C260A1306000052F2 /* ImagePicker.swift */; };
@@ -66,6 +67,7 @@
 		AB54174E2608DACF0084B7FA /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
 		AB5417512608DADF0084B7FA /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		AB5417542608DC2E0084B7FA /* URLImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
+		AB74BFF4260CEADF00886EC9 /* ArrowImg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowImg.swift; sourceTree = "<group>"; };
 		AB7D9734260A09D8000052F2 /* UserAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAction.swift; sourceTree = "<group>"; };
 		AB7D9738260A1255000052F2 /* PublishConfessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishConfessionView.swift; sourceTree = "<group>"; };
 		AB7D973C260A1306000052F2 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				AB7D973F260A15EF000052F2 /* ImagePickerView.swift */,
 				AB864FD4260B7EFD009BCBAA /* PostCell.swift */,
 				AB864FDB260B8DA3009BCBAA /* PostView.swift */,
+				AB74BFF4260CEADF00886EC9 /* ArrowImg.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				AB5417152608BA580084B7FA /* AppError.swift in Sources */,
 				AB5417432608D98A0084B7FA /* LoginView.swift in Sources */,
 				AB7D974C260A2091000052F2 /* DataAction.swift in Sources */,
+				AB74BFF5260CEADF00886EC9 /* ArrowImg.swift in Sources */,
 				AB5417362608BF200084B7FA /* ScheduleView.swift in Sources */,
 				AB864FDC260B8DA3009BCBAA /* PostView.swift in Sources */,
 				AB54172F2608BF040084B7FA /* HomeView.swift in Sources */,
