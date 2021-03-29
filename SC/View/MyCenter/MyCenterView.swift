@@ -17,53 +17,73 @@ struct MyCenterView: View {
     var body: some View {
         
         ScrollView{
-            VStack(spacing: 10){
+            VStack(spacing: 0){
                 
                 InfoView()
                 
-                HStack{
+                VStack(spacing: 0){
                     NavigationLink(destination: AnnouncementView()){
-                        TypeCell(title: "学校公告", imgName: "bell", color: Color(.systemRed))
+                        InfoCell(title: "学校公告", imgName: "bell")
                     }
-                    Spacer()
-                    TypeCell(title: "成绩查询", imgName: "bell", color: Color(.systemOrange))
-                    Spacer()
-                    
-                    TypeCell(title: "课程", imgName: "bell", color: Color(.systemYellow))
-                    
-                    Spacer()
-                    TypeCell(title: "调温", imgName: "bell", color: Color(.systemGreen))
-                }.padding(.horizontal, 20)
-                
-                HStack{
-                    
-                    TypeCell(title: "待办事项", imgName: "bell", color: Color(.systemTeal))
-                    Spacer()
-                    TypeCell(title: "请假", imgName: "bell", color: Color(.systemPurple))
-                    Spacer()
-                    TypeCell(title: "表白", imgName: "bell", color: Color(.systemBlue))
-                    Spacer()
-                    TypeCell(title: "报修", imgName: "bell", color: Color(.systemIndigo))
-                    
-                }.padding(.horizontal, 20)
-                
-                
-                
-                InfoCell(title: "设置", imgName: "gear")
-                if binding.isLogin.wrappedValue{
-                    InfoCell(title: "退出登录", imgName: "xmark.circle")
-                        .onTapGesture {
-                            Store.shared.logout()
-                        }
+                    NavigationLink(destination: QueryScoreView()){
+                        InfoCell(title: "成绩查询", imgName: "doc.text.magnifyingglass")
+                    }
+                    NavigationLink(destination: TemperatureView()){
+                        InfoCell(title: "调温", imgName: "thermometer.sun")
+                    }
                 }
                 
+                VStack(spacing: 0){
+                    NavigationLink(destination: TodoListView()){
+                        InfoCell(title: "待办事项", imgName: "list.number")
+                    }
+                    NavigationLink(destination: LeaveView()){
+                        InfoCell(title: "请假", imgName: "envelope")
+                    }
+                    NavigationLink(destination: RepairView()){
+                        InfoCell(title: "报修", imgName: "wrench.and.screwdriver")
+                    }
+                    NavigationLink(destination: SettingView()){
+                        InfoCell(title: "设置", imgName: "gear")
+                    }
+                }
             }
-            
-        }.listStyle(PlainListStyle())
-        
-        .navigationBarTitle("我的", displayMode: .inline)
+        }.navigationBarTitle("我的", displayMode: .inline)
         
     }
+    
+    var colorView: some View{
+        VStack{
+            HStack{
+                NavigationLink(destination: AnnouncementView()){
+                    TypeCell(title: "学校公告", imgName: "bell", color: Color(.systemRed))
+                }
+                Spacer()
+                TypeCell(title: "成绩查询", imgName: "bell", color: Color(.systemOrange))
+                Spacer()
+                
+                TypeCell(title: "课程", imgName: "bell", color: Color(.systemYellow))
+                
+                Spacer()
+                TypeCell(title: "调温", imgName: "bell", color: Color(.systemGreen))
+            }.padding(.horizontal, 20)
+            
+            HStack{
+                
+                TypeCell(title: "待办事项", imgName: "bell", color: Color(.systemTeal))
+                Spacer()
+                TypeCell(title: "请假", imgName: "bell", color: Color(.systemPurple))
+                Spacer()
+                TypeCell(title: "表白", imgName: "bell", color: Color(.systemBlue))
+                Spacer()
+                TypeCell(title: "报修", imgName: "bell", color: Color(.systemIndigo))
+                
+            }.padding(.horizontal, 20)
+            
+            
+        }
+    }
+    
 }
 
 struct MyCenterView_Previews: PreviewProvider {
@@ -154,15 +174,16 @@ private struct InfoCell: View{
     var imgName: String
     
     var body: some View{
-        HStack{
+        HStack(spacing: 10){
             Image(systemName: imgName)
             Text(title)
             
             Spacer()
+            
+            ArrowImg()
         }.frame(height: 54)
-        .padding(.horizontal, 15)
+        .foregroundColor(Color(.label))
+        .padding(.horizontal, 20)
         .contentShape(Rectangle())
-        
-        
     }
 }
