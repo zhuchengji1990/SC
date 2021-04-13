@@ -34,13 +34,14 @@ struct MainView: View {
     
     var body: some View {
         NavigationView{
+            
             VStack(spacing: 0){
                 Group{
                     switch binding.selection.wrappedValue{
-                    case 0:  HomeView()
-                    case 1: ScheduleView()
-                    case 2: ConfessionView()
-                    default: MyCenterView()
+                    case 0:     HomeView()
+                    case 1:     ScheduleView()
+                    case 2:     ConfessionView()
+                    default:    MyCenterView()
                     }
                 }.frame(maxWidth: .infinity, maxHeight: .infinity)
                 

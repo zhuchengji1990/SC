@@ -25,20 +25,20 @@ struct MyCenterView: View {
                     NavigationLink(destination: AnnouncementView()){
                         InfoCell(title: "学校公告", imgName: "bell")
                     }
-                    NavigationLink(destination: QueryScoreView()){
-                        InfoCell(title: "成绩查询", imgName: "doc.text.magnifyingglass")
-                    }
-                    NavigationLink(destination: TemperatureView()){
-                        InfoCell(title: "调温", imgName: "thermometer.sun")
-                    }
-                }
-                
-                VStack(spacing: 0){
                     NavigationLink(destination: TodoListView()){
                         InfoCell(title: "待办事项", imgName: "list.number")
                     }
                     NavigationLink(destination: LeaveView()){
                         InfoCell(title: "请假", imgName: "envelope")
+                    }
+                }
+                
+                VStack(spacing: 0){
+                    NavigationLink(destination: QueryScoreView()){
+                        InfoCell(title: "成绩查询", imgName: "doc.text.magnifyingglass")
+                    }
+                    NavigationLink(destination: TemperatureView()){
+                        InfoCell(title: "调温", imgName: "thermometer.sun")
                     }
                     NavigationLink(destination: RepairView()){
                         InfoCell(title: "报修", imgName: "wrench.and.screwdriver")

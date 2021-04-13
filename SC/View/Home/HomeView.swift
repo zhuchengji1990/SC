@@ -9,20 +9,39 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        
-        List{
-            ForEach(0..<20){ index in
-                InfoCell(title: "待办事项\(index)")
-            }
-        }.listStyle(PlainListStyle())
-        .navigationBarTitle("首页", displayMode: .inline)
+        ZStack{
+            Color(.secondarySystemBackground).edgesIgnoringSafeArea(.all)
+            ScrollView{
+                VStack(spacing: 20) {
+                    
+                    ForEach(0..<3){ index in
+                        NavigationLink(destination: CourseDetailView()){
+                            CourseCell(title: "课程\(index)")
+                        }
+                    }
+                    
+                    ForEach(0..<20){ index in
+                        NavigationLink(destination: ScheduleDetailView()){
+                            ScheduleCell(title: "作业\(index)")
+                        }
+                        
+                    }
+                }.padding(20)
+                
+                
+                
+            }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+        }
+        .navigationBarTitle(Date().toCNString(), displayMode: .large)
         
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        NavigationView{
+            HomeView()
+        }
     }
 }
 
@@ -50,14 +69,60 @@ struct TypeCell: View{
     
 }
 
-private struct InfoCell: View {
+
+struct CourseCell: View {
+    var title: String
+    var body: some View {
+        VStack(spacing: 10){
+            HStack{
+                
+                Text(title).bold()
+                    .font(.system(size: 22))
+                Spacer()
+                
+                Image(systemName: "laptopcomputer")
+            }
+            
+            
+            Color(.orange).frame(height: 2)
+            
+            HStack{
+                Text("C424").bold()
+                Spacer()
+            }
+            
+            HStack{
+                Text("今天7-8节").bold()
+                Spacer()
+                Text("距离上课还有30分")
+            }.font(.system(size: 14))
+            .foregroundColor(Color(.secondaryLabel))
+            
+        }
+        .padding(20)
+        .foregroundColor(Color(.label))
+        .background(Color(.systemBackground))
+        .cornerRadius(10)
+    }
+}
+
+
+struct ScheduleCell: View {
     var title: String
     var body: some View {
         HStack{
+            Color(.orange).frame(width: 10)
+            
             Text(title)
             Spacer()
             
-            ArrowImg()
-        }.frame(height: 64)
+            RoundedRectangle(cornerRadius: 2).strokeBorder(Color(.label), lineWidth: 1.0, antialiased: true)
+                .frame(width: 16, height: 16)
+            
+        }.frame(height: 84)
+        .padding(.trailing, 20)
+        .foregroundColor(Color(.label))
+        .background(Color(.systemBackground))
+        .cornerRadius(10)
     }
 }

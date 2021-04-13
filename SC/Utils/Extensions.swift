@@ -153,6 +153,13 @@ extension Date{
         f.locale = .current
         return f.string(from: self)
     }
+    
+    func toCNString(_ dateFormat: String = "yyyy年MM月dd日") -> String{
+        let f = DateFormatter()
+        f.dateFormat = dateFormat
+        f.locale = .current
+        return f.string(from: self)
+    }
 }
 
 
