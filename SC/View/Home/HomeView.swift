@@ -1,7 +1,7 @@
 //
 //  HomeView.swift
 //  SC
-//
+//Date().toCNString()
 //  Created by 沉寂 on 2021/3/22.
 //
 
@@ -27,13 +27,8 @@ struct HomeView: View {
                         
                     }
                 }.padding(20)
-                
-                
-                
-            }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-        }
-        .navigationBarTitle(Date().toCNString(), displayMode: .large)
-        
+            }.frame(maxWidth: .infinity, maxHeight: .infinity)
+        }.navigationBarTitle(Date().toString("yyyy年MM月dd日"), displayMode: .large)
     }
 }
 
@@ -75,11 +70,9 @@ struct CourseCell: View {
     var body: some View {
         VStack(spacing: 10){
             HStack{
-                
                 Text(title).bold()
                     .font(.system(size: 22))
                 Spacer()
-                
                 Image(systemName: "laptopcomputer")
             }
             

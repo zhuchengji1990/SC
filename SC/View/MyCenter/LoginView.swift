@@ -22,24 +22,18 @@ struct LoginView: View {
     var body: some View {
         NavigationView{
             VStack(spacing: 20){
-                
                 HStack{
                     Image(systemName: "person")
-                    
                     TextField("请输入用户名", text: binding.username)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(height: 44)
-                    
                 }
                 
-                
                 HStack{
-                    
                     Image(systemName: "lock")
                     SecureField("请输入密码", text: binding.password)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(height: 44)
-                    
                 }
                 
                 
@@ -51,9 +45,7 @@ struct LoginView: View {
                     Store.shared.signUp()
                 }
                 
-                
                 Spacer()
-                
                 
             }.padding(20)
             .alert(item: binding.error) { (error) -> Alert in

@@ -21,9 +21,6 @@ struct PublishConfessionView: View {
     
     @State var isPresented = false
     
-    init(){
-        UITextView.appearance().backgroundColor = .clear
-    }
     
     var body: some View {
         NavigationView{

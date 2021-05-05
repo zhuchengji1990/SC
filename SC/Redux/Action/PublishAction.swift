@@ -33,7 +33,6 @@ extension Store{
             self.hideHud()
             return
         }
-        
         let imgFile = LCFile(payload: .data(data: data))
         imgFile.name = LCString("\(type.rawValue).jpg")
         imgFile.uploadPublisher()
@@ -63,7 +62,6 @@ extension Store{
                     self.appState.publish = state
                     self.appState.publish.isSuccess.send(true)
                     
-                    //重新加载表白墙
                     self.loadPosts()
                     
                 case let .failure(error):

@@ -60,17 +60,14 @@ struct PublishAnnouncementView: View {
                     Spacer()
                 }
                 
-                
                 TextEditor(text: binding.text)
                     .frame(height: 100)
                     .background(Color(.secondarySystemBackground))
                     .cornerRadius(10)
                 
                 MButton(text: "发布", disabled: binding.isNextDisabled) {
-                    
                     Store.shared.publish(type: .announcement)
                 }
-                
                 
                 Spacer()
                 

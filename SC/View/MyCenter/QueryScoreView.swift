@@ -9,13 +9,15 @@ import SwiftUI
 
 struct QueryScoreView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Hello, World!")
             .navigationBarTitle("成绩查询", displayMode: .inline)
     }
 }
 
 struct QueryScoreView_Previews: PreviewProvider {
     static var previews: some View {
-        QueryScoreView()
+        NavigationView{
+            QueryScoreView()
+        }
     }
 }

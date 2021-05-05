@@ -25,7 +25,7 @@ struct MainView: View {
         case confession
         case schedule
         case announcement
-        
+        case course
         case none
     }
     
@@ -39,7 +39,7 @@ struct MainView: View {
                 Group{
                     switch binding.selection.wrappedValue{
                     case 0:     HomeView()
-                    case 1:     ScheduleView()
+                    case 1:     CourseView()
                     case 2:     ConfessionView()
                     default:    MyCenterView()
                     }
@@ -47,19 +47,38 @@ struct MainView: View {
                 
                 MTabView(selection: binding.selection)
             }
-            .navigationBarItems(trailing: Menu {
-                Button("发布表白", action: {
-                    self.sheetItem = .confession
-                })
-                Button("发布待办事项", action: {
-                    self.sheetItem = .schedule
-                })
-                Button("发布公告", action: {
-                    self.sheetItem = .announcement
-                })
-            } label: {
-                Image(systemName: "plus.circle")
-            })
+            .navigationBarItems(
+                leading: Menu {
+                    Button("学生", action: {
+                        $store.role.wrappedValue = .student
+                    })
+                    Button("教师", action: {
+                        $store.role.wrappedValue = .teacher
+                    })
+                    Button("管理员", action: {
+                        $store.role.wrappedValue = .admin
+                    })
+                } label: {
+                    Text($store.role.wrappedValue.rawValue)
+                        .frame(width: 64, height: 44)
+                }, trailing: Menu {
+                    Button("发布表白", action: {
+                        self.sheetItem = .confession
+                    })
+                    Button("发布待办事项", action: {
+                        self.sheetItem = .schedule
+                    })
+                    Button("发布公告", action: {
+                        self.sheetItem = .announcement
+                    })
+                    Button("添加课程", action: {
+                        self.sheetItem = .course
+                    })
+                } label: {
+                    Image(systemName: "plus.circle")
+                        .frame(width: 44, height: 44)
+                }
+            )
         }.navigationViewStyle(StackNavigationViewStyle())
         .loading(isShowing: hud.isShowing)
         .sheet(item: $sheetItem) { (item) in
@@ -71,6 +90,8 @@ struct MainView: View {
                     PublishScheduleView()
                 case .announcement:
                     PublishAnnouncementView()
+                case .course:
+                    AddCourseView()
                 default:
                     EmptyView()
                 }

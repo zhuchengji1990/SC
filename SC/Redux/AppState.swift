@@ -9,6 +9,7 @@ import Foundation
 import Combine
 import UIKit
 import LeanCloud
+import SwiftUI
 
 struct AppState {
     
@@ -21,8 +22,9 @@ struct AppState {
     var myCenter = MyCenter()
     var login = Login()
     
-    
     var publish = Publish()
+    var addCourse = AddCourse()
+    var repair = Repair()
     
 }
 
@@ -102,8 +104,38 @@ extension AppState{
         var error: AppError?
     }
     
-   
+    
+    struct AddCourse{
+        var courseName = ""
+        var teacherName = ""
+        var phone = ""
+        var type = ""
+        var time = ""
+        var color = ""
+        
+        var isSuccess = PassthroughSubject<Bool, Never>()
+        var error: AppError?
+    }
     
     
+    struct Repair {
+        var text = ""{
+            didSet{
+                isNextDisabled = text.count == 0 || image == nil
+            }
+        }
+        
+        var image: UIImage? = nil{
+            didSet{
+                isNextDisabled = text.count == 0 || image == nil
+            }
+        }
+        
+        var isNextDisabled = true
+        
+        var isSuccess = PassthroughSubject<Bool, Never>()
+        var error: AppError?
+    }
     
 }
+

@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import UIKit
 
 class Store: ObservableObject{
     
@@ -15,17 +16,24 @@ class Store: ObservableObject{
     
     @Published var appState = AppState()
     
+    enum Role: String{
+        case student = "学生"
+        case teacher = "教师"
+        case admin = "管理员"
+    }
+    
+    @Published var role: Role = .student
+    
+    
     var bags = Set<AnyCancellable>()
-    
-    
-    
     
 }
 
 extension Store{
     
-    
     func run(){
+        
+        UITextView.appearance().backgroundColor = .clear
         
         initLeanCloud()
         
@@ -37,8 +45,6 @@ extension Store{
 }
 
 extension Store{
-    
-    
     
     func showHud(_ title: String = "加载中"){
         DispatchQueue.main.async {
@@ -53,4 +59,5 @@ extension Store{
     }
     
 }
+
 

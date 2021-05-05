@@ -21,7 +21,6 @@ struct CourseDetailView: View {
                 InfoCell(title: "通知", content: "院长旁听")
                 InfoCell(title: "必带物品", content: "电脑、作业本")
                 
-                
                 Spacer()
                 
             }.padding(20)
@@ -35,13 +34,10 @@ struct CourseDetailView: View {
 struct CourseDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            
             CourseDetailView()
         }
     }
 }
-
-
 
 private struct InfoCell: View {
     var title: String
@@ -60,3 +56,5 @@ private struct InfoCell: View {
         .cornerRadius(10)
     }
 }
+
+
