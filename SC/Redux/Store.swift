@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import UIKit
+import LeanCloud
 
 class Store: ObservableObject{
     
@@ -23,6 +24,10 @@ class Store: ObservableObject{
     }
     
     @Published var role: Role = .student
+    
+    var user: LCUser?{
+        LCApplication.default.currentUser
+    }
     
     
     var bags = Set<AnyCancellable>()

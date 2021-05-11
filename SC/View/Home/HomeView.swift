@@ -9,26 +9,25 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        ZStack{
-            Color(.secondarySystemBackground).edgesIgnoringSafeArea(.all)
-            ScrollView{
-                VStack(spacing: 20) {
-                    
-                    ForEach(0..<3){ index in
-                        NavigationLink(destination: CourseDetailView()){
-                            CourseCell(title: "课程\(index)")
-                        }
+        ScrollView{
+            VStack(spacing: 20) {
+                
+                ForEach(0..<3){ index in
+                    NavigationLink(destination: CourseDetailView()){
+                        CourseCell(title: "课程\(index)")
+                    }
+                }
+                
+                ForEach(0..<20){ index in
+                    NavigationLink(destination: ScheduleDetailView()){
+                        ScheduleCell(title: "作业\(index)")
                     }
                     
-                    ForEach(0..<20){ index in
-                        NavigationLink(destination: ScheduleDetailView()){
-                            ScheduleCell(title: "作业\(index)")
-                        }
-                        
-                    }
-                }.padding(20)
-            }.frame(maxWidth: .infinity, maxHeight: .infinity)
-        }.navigationBarTitle(Date().toString("yyyy年MM月dd日"), displayMode: .large)
+                }
+            }.padding(20)
+            .background(Color(.secondarySystemBackground))
+        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+        .navigationBarTitle(Date().toString("yyyy年MM月dd日"), displayMode: .automatic)
     }
 }
 

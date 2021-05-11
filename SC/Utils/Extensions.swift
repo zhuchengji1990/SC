@@ -225,3 +225,6 @@ extension AnyCancellable {
     }
 }
 
+extension LCObject: Identifiable{
+    public var id: String { self.objectId?.stringValue ?? UUID().uuidString }
+}

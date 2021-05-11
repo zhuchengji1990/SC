@@ -25,6 +25,7 @@ struct AppState {
     var publish = Publish()
     var addCourse = AddCourse()
     var repair = Repair()
+    var leave = Leave()
     
 }
 
@@ -119,6 +120,7 @@ extension AppState{
     
     
     struct Repair {
+        var address = ""
         var text = ""{
             didSet{
                 isNextDisabled = text.count == 0 || image == nil
@@ -136,6 +138,21 @@ extension AppState{
         var isSuccess = PassthroughSubject<Bool, Never>()
         var error: AppError?
     }
+    
+    
+    struct Leave {
+        
+       
+        var startDate: Date?
+        var endDate: Date?
+       var text: String = ""
+        
+        var isNextDisabled = true
+        
+        var isSuccess = PassthroughSubject<Bool, Never>()
+        var error: AppError?
+    }
+    
     
 }
 
