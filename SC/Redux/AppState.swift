@@ -26,6 +26,7 @@ struct AppState {
     var addCourse = AddCourse()
     var repair = Repair()
     var leave = Leave()
+    var temperature = Temperature()
     
 }
 
@@ -141,11 +142,20 @@ extension AppState{
     
     
     struct Leave {
-        
-       
         var startDate: Date?
         var endDate: Date?
-       var text: String = ""
+        var text: String = ""
+        
+        var isNextDisabled = true
+        
+        var isSuccess = PassthroughSubject<Bool, Never>()
+        var error: AppError?
+    }
+    
+    struct Temperature {
+        var startDate: Date?
+        var endDate: Date?
+        var text: String = ""
         
         var isNextDisabled = true
         

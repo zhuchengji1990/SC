@@ -49,6 +49,7 @@
 		AB895BE32611F59100BD813B /* RepairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB895BE22611F59100BD813B /* RepairView.swift */; };
 		AB895BE62611F5AE00BD813B /* TemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB895BE52611F5AE00BD813B /* TemperatureView.swift */; };
 		AB895BE92611F6E500BD813B /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB895BE82611F6E500BD813B /* SettingView.swift */; };
+		ABB55B75264C2C1A007161DE /* TemperatureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB55B74264C2C1A007161DE /* TemperatureListView.swift */; };
 		ABBDDF152642936E00621C95 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBDDF142642936E00621C95 /* PostDetailView.swift */; };
 		ABDE4F802625D74600993E22 /* CourseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDE4F7F2625D74600993E22 /* CourseDetailView.swift */; };
 		ABDE4F832625D75E00993E22 /* ScheduleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDE4F822625D75E00993E22 /* ScheduleDetailView.swift */; };
@@ -102,6 +103,7 @@
 		AB895BE22611F59100BD813B /* RepairView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepairView.swift; sourceTree = "<group>"; };
 		AB895BE52611F5AE00BD813B /* TemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureView.swift; sourceTree = "<group>"; };
 		AB895BE82611F6E500BD813B /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		ABB55B74264C2C1A007161DE /* TemperatureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureListView.swift; sourceTree = "<group>"; };
 		ABBDDF142642936E00621C95 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
 		ABDE4F7F2625D74600993E22 /* CourseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailView.swift; sourceTree = "<group>"; };
 		ABDE4F822625D75E00993E22 /* ScheduleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDetailView.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				AB895BD62611F4C900BD813B /* QueryScoreView.swift */,
 				AB895BDC2611F50A00BD813B /* TodoListView.swift */,
 				AB895BE52611F5AE00BD813B /* TemperatureView.swift */,
+				ABB55B74264C2C1A007161DE /* TemperatureListView.swift */,
 				AB895BE82611F6E500BD813B /* SettingView.swift */,
 				AB895BE22611F59100BD813B /* RepairView.swift */,
 				AB67137B264AD35700108DED /* RepairListView.swift */,
@@ -426,6 +429,7 @@
 				AB7D9748260A18F5000052F2 /* PublishAction.swift in Sources */,
 				AB7D973D260A1306000052F2 /* ImagePicker.swift in Sources */,
 				AB54170E2608BA420084B7FA /* Store.swift in Sources */,
+				ABB55B75264C2C1A007161DE /* TemperatureListView.swift in Sources */,
 				AB671380264ADAAC00108DED /* OverlayView.swift in Sources */,
 				AB5417282608BDE40084B7FA /* MainView.swift in Sources */,
 				AB5417492608D9BA0084B7FA /* CloseBtn.swift in Sources */,

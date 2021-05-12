@@ -171,5 +171,36 @@ extension Store{
             }.store(in: &bags)
     }
     
+    func sendTemperature(){
+        
+        let state = self.appState.temperature
+        
+        guard let startDate = state.startDate,
+              let endDate = state.endDate else {
+            return
+        }
+        self.showHud()
+        let obj = LCObject(className: "Temperature")
+        try? obj.set("owner", value: self.user)
+        try? obj.set("startDate", value: startDate)
+        try? obj.set("endDate", value: endDate)
+        try? obj.set("text", value: state.text)
+        obj.savePublisher()
+            .sink { res in
+                self.hideHud()
+                
+                switch res{
+                case .success:
+                    self.appState.temperature.isSuccess.send(true)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        self.appState.temperature = AppState.Temperature()
+                    }
+                case let .failure(error):
+                    self.appState.temperature.error = .normal(error)
+                }
+            }.store(in: &bags)
+    }
+    
+    
     
 }
