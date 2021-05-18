@@ -85,7 +85,7 @@ private struct InfoView: View{
                 .foregroundColor(Color.theme)
                 .clipShape(Circle())
                 .shadow(radius: 5)
-            Text(binding.username.wrappedValue.localizedString).bold()
+            Text(binding.name.wrappedValue.localizedString).bold()
                 .font(.system(size: 24))
                 .foregroundColor(Color(.label))
             
@@ -104,7 +104,7 @@ private struct InfoView: View{
                 .clipShape(Circle())
                 .shadow(radius: 5)
             
-            Text(binding.username.wrappedValue).bold()
+            Text(binding.name.wrappedValue).bold()
                 .font(.system(size: 24))
                 .foregroundColor(Color(.label))
                 

@@ -30,6 +30,8 @@
 		AB55B3962653A2170057EE4B /* AddScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55B3952653A2170057EE4B /* AddScoreView.swift */; };
 		AB55B3992653A22E0057EE4B /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55B3982653A22E0057EE4B /* UserView.swift */; };
 		AB55B39C2653A9BC0057EE4B /* AddScoreDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55B39B2653A9BC0057EE4B /* AddScoreDetailView.swift */; };
+		AB55B3A22653DA430057EE4B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55B3A12653DA430057EE4B /* SignUpView.swift */; };
+		AB55B3A62653DAFC0057EE4B /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55B3A52653DAFC0057EE4B /* SignInView.swift */; };
 		AB55DCAD2653617E00F0B00B /* CourseAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55DCAC2653617E00F0B00B /* CourseAction.swift */; };
 		AB67137C264AD35700108DED /* RepairListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB67137B264AD35700108DED /* RepairListView.swift */; };
 		AB671380264ADAAC00108DED /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB67137F264ADAAC00108DED /* OverlayView.swift */; };
@@ -88,6 +90,8 @@
 		AB55B3952653A2170057EE4B /* AddScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScoreView.swift; sourceTree = "<group>"; };
 		AB55B3982653A22E0057EE4B /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		AB55B39B2653A9BC0057EE4B /* AddScoreDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScoreDetailView.swift; sourceTree = "<group>"; };
+		AB55B3A12653DA430057EE4B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		AB55B3A52653DAFC0057EE4B /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		AB55DCAC2653617E00F0B00B /* CourseAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseAction.swift; sourceTree = "<group>"; };
 		AB67137B264AD35700108DED /* RepairListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepairListView.swift; sourceTree = "<group>"; };
 		AB67137F264ADAAC00108DED /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
@@ -229,6 +233,7 @@
 		AB54171A2608BA780084B7FA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AB55B3A02653DA310057EE4B /* Login */,
 				AB832DD726509F4800563125 /* Temperature */,
 				AB832DD626509F3000563125 /* Repair */,
 				AB832DD526509F1F00563125 /* Leave */,
@@ -292,7 +297,6 @@
 			isa = PBXGroup;
 			children = (
 				AB5417382608BF2D0084B7FA /* MyCenterView.swift */,
-				AB5417422608D98A0084B7FA /* LoginView.swift */,
 				AB895BDC2611F50A00BD813B /* TodoListView.swift */,
 				AB895BE82611F6E500BD813B /* SettingView.swift */,
 				AB895BD62611F4C900BD813B /* QueryScoreView.swift */,
@@ -301,6 +305,16 @@
 				AB55B3982653A22E0057EE4B /* UserView.swift */,
 			);
 			path = MyCenter;
+			sourceTree = "<group>";
+		};
+		AB55B3A02653DA310057EE4B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				AB5417422608D98A0084B7FA /* LoginView.swift */,
+				AB55B3A52653DAFC0057EE4B /* SignInView.swift */,
+				AB55B3A12653DA430057EE4B /* SignUpView.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		AB7D9737260A1234000052F2 /* Publish */ = {
@@ -474,6 +488,7 @@
 				AB895BE92611F6E500BD813B /* SettingView.swift in Sources */,
 				AB7D9748260A18F5000052F2 /* PublishAction.swift in Sources */,
 				AB7D973D260A1306000052F2 /* ImagePicker.swift in Sources */,
+				AB55B3A22653DA430057EE4B /* SignUpView.swift in Sources */,
 				AB54170E2608BA420084B7FA /* Store.swift in Sources */,
 				ABB55B75264C2C1A007161DE /* TemperatureListView.swift in Sources */,
 				AB671380264ADAAC00108DED /* OverlayView.swift in Sources */,
@@ -497,6 +512,7 @@
 				AB5416FD2608BA1E0084B7FA /* SCApp.swift in Sources */,
 				AB7D9740260A15EF000052F2 /* ImagePickerView.swift in Sources */,
 				AB5417522608DADF0084B7FA /* WebView.swift in Sources */,
+				AB55B3A62653DAFC0057EE4B /* SignInView.swift in Sources */,
 				AB7D9735260A09D8000052F2 /* UserAction.swift in Sources */,
 				AB2E691026424323009A6FB2 /* AddCourseView.swift in Sources */,
 				AB7D9744260A17E7000052F2 /* PublishScheduleView.swift in Sources */,

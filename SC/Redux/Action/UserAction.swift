@@ -30,7 +30,7 @@ extension Store{
         
         self.showHud()
         
-        var state = self.appState.login
+        let state = self.appState.signUp
         
         let username = state.username
         let password = state.password
@@ -39,24 +39,32 @@ extension Store{
         
         user.username = LCString(username)
         user.password = LCString(password)
+        try? user.set("name", value: state.name)
+        try? user.set("studentNumber", value: state.studentNumber)
+        try? user.set("idNumber", value: state.idNumber)
         
-        user.signUp { (res) in
+        user.signUp { res in
             
             self.hideHud()
             
+            LCApplication.default.currentUser = user
+            
+            self.loadUserInfo()
+            
             switch res{
             case .success:
-                state.username = ""
-                state.password = ""
-                state.isNextDisabled = true
-                self.appState.login = state
+                
                 self.appState.login.isSuccess.send(true)
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.appState.login = AppState.Login()
+                    self.appState.signUp = AppState.SignUp()
+                }
+                
             case let .failure(error):
                 print(error)
                 self.appState.login.error = .signUp(error)
             }
-            
-            self.loadUserInfo()
         }
         
     }
@@ -66,7 +74,7 @@ extension Store{
         
         self.showHud()
         
-        var state = self.appState.login
+        let state = self.appState.signIn
         
         let username = state.username
         let password = state.password
@@ -78,10 +86,12 @@ extension Store{
             switch res{
             case let .success(user):
                 print(user)
-                state.username = ""
-                state.password = ""
-                self.appState.login = state
+                
                 self.appState.login.isSuccess.send(true)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.appState.login = AppState.Login()
+                    self.appState.signIn = AppState.SignIn()
+                }
             case let .failure(error):
                 print(error)
                 self.appState.login.error = .login(error)
@@ -97,10 +107,10 @@ extension Store{
         var state = self.appState.myCenter
         if let user = LCApplication.default.currentUser{
             state.isLogin = true
-            state.username = user.username?.stringValue ?? "无名氏"
+            state.name = user.get("name")?.stringValue ?? "无名氏"
         }else{
             state.isLogin = false
-            state.username = "点击登录"
+            state.name = "点击登录"
         }
         self.appState.myCenter = state
     }

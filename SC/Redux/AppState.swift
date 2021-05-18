@@ -22,6 +22,8 @@ struct AppState {
     
     var myCenter = MyCenter()
     var login = Login()
+    var signUp = SignUp()
+    var signIn = SignIn()
     
     var publish = Publish()
     var addCourse = AddCourse()
@@ -71,10 +73,17 @@ extension AppState{
     
     struct MyCenter {
         var isLogin = false
-        var username = "点击登录"
+        var name = "点击登录"
     }
     
     struct Login{
+       var selection = 0
+        
+        var isSuccess = PassthroughSubject<Bool, Never>()
+        var error: AppError?
+    }
+    
+    struct SignIn{
         var username = ""{
             didSet{
                 isNextDisabled = username.count < 6 || password.count < 6
@@ -91,6 +100,28 @@ extension AppState{
         
         var isSuccess = PassthroughSubject<Bool, Never>()
         var error: AppError?
+    }
+    
+    struct SignUp{
+        var username = ""{ didSet{ check() } }
+        var password = ""{ didSet{ check() } }
+        var name = ""{ didSet{ check() } }
+        var studentNumber = ""{
+            didSet{
+                studentNumber = String(oldValue.prefix(10))
+                check()
+            }
+        }
+        var idNumber = ""{ didSet{ check() } }
+        
+        var isNextDisabled = true
+        
+        var isSuccess = PassthroughSubject<Bool, Never>()
+        var error: AppError?
+        
+        mutating func check(){
+            isNextDisabled = username.count < 6 || password.count < 6 || name.count == 0 || studentNumber.count != 10 || idNumber.count == 0
+        }
     }
     
     struct Publish {

@@ -21,45 +21,34 @@ struct LoginView: View {
     
     var body: some View {
         NavigationView{
-            VStack(spacing: 20){
-                HStack{
-                    Image(systemName: "person")
-                    TextField("请输入用户名", text: binding.username)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .frame(height: 44)
-                }
+            VStack(spacing: 0){
                 
-                HStack{
-                    Image(systemName: "lock")
-                    SecureField("请输入密码", text: binding.password)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .frame(height: 44)
-                }
+                Picker(selection: binding.selection, label: Text("")) {
+                    Text("登录").tag(0)
+                    Text("注册").tag(1)
+                }.pickerStyle(SegmentedPickerStyle())
+                .frame(width: 150)
+                .padding(10)
                 
-                
-                MButton(text: "登录", disabled: binding.isNextDisabled) {
-                    Store.shared.login()
-                }
-                
-                MButton(text: "注册", disabled: binding.isNextDisabled) {
-                    Store.shared.signUp()
+                if binding.selection.wrappedValue == 0{
+                    SignInView()
+                }else{
+                    SignUpView()
                 }
                 
                 Spacer()
-                
-            }.padding(20)
+            }
             .alert(item: binding.error) { (error) -> Alert in
                 Alert(title: Text("提示"), message: Text(error.localizedDescription))
             }
             .onReceive(binding.isSuccess.wrappedValue) { (_) in
                 self.presentationMode.wrappedValue.dismiss()
             }
-            .navigationBarTitle("登录", displayMode: .inline)
+            .navigationBarTitle(binding.selection.wrappedValue == 0 ? "登录" : "注册", displayMode: .inline)
             .navigationBarItems(leading: CloseBtn{
                 self.presentationMode.wrappedValue.dismiss()
             })
         }.loading(isShowing: hud.isShowing)
-        
     }
 }
 

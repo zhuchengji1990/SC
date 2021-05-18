@@ -9,12 +9,14 @@ import SwiftUI
 import LeanCloud
 
 struct SettingView: View {
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         VStack{
             Spacer()
             
             if let _ = LCApplication.default.currentUser{
                 Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
                     Store.shared.logout()
                 }, label: {
                     Text("退出登录")
