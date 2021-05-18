@@ -28,6 +28,7 @@ struct AppState {
     var repair = Repair()
     var leave = Leave()
     var temperature = Temperature()
+    var publishSchedule = PublishSchedule()
     
 }
 
@@ -112,6 +113,8 @@ extension AppState{
     }
     
     
+    
+    
     struct AddCourse{
         var courseName = ""
         var teacherName = ""
@@ -175,6 +178,29 @@ extension AppState{
         var error: AppError?
     }
     
+    
+    struct PublishSchedule {
+        var text: String = ""{
+            didSet{
+                isNextDisabled = text.count == 0 || startDate == nil || course == nil
+            }
+        }
+        var startDate: Date?{
+            didSet{
+                isNextDisabled = text.count == 0 || startDate == nil || course == nil
+            }
+        }
+        var course: LCObject?{
+            didSet{
+                isNextDisabled = text.count == 0 || startDate == nil || course == nil
+            }
+        }
+        
+        var isNextDisabled = true
+        
+        var isSuccess = PassthroughSubject<Bool, Never>()
+        var error: AppError?
+    }
     
 }
 

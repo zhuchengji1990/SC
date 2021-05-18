@@ -65,10 +65,13 @@ extension Store{
     
     func loadScheduleList(){
         guard let user = Store.shared.user else { return }
+        self.showHud()
         let query = LCQuery(className: "Schedule")
         try? query.where("owner", .equalTo(user))
         try? query.where("startDate", .descending)
+        try? query.where("coursePointer", .included)
         query.find { res in
+            self.hideHud()
             switch res{
             case let .success(array):
                 self.appState.home.scheduleArray = array

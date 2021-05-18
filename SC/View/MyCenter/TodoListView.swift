@@ -8,29 +8,31 @@
 import SwiftUI
 
 struct TodoListView: View {
-    
+    @EnvironmentObject var store: Store
+    var binding: Binding<AppState.Home>{
+        $store.appState.home
+    }
     
     @State var selection = 0
     
     var body: some View {
-        VStack{
-            
-            Picker(selection: $selection, label: Text("Picker")){
-                Text("未完成").tag(0)
-                Text("已完成").tag(1)
-            }.pickerStyle(SegmentedPickerStyle())
-            .frame(width: 200)
-            .frame(height: 44)
-            
-            List{
+        ScrollView{
+            VStack(spacing: 20) {
                 
-                ForEach(0..<30) { index in
-                    Text("待办事项\(index)")
-                        .frame(height: 44)
+                ForEach(binding.scheduleArray.wrappedValue){ obj in
+                    NavigationLink(destination: ScheduleDetailView(obj: obj)){
+                        ScheduleCell(obj: obj)
+                    }
                 }
-            }.listStyle(PlainListStyle())
-            
-        }.navigationBarTitle("待办事项", displayMode: .inline)
+                
+                Spacer()
+            }.padding(20)
+        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(.secondarySystemBackground))
+        .navigationBarTitle("待办事项", displayMode: .inline)
+        .onAppear{
+            Store.shared.loadScheduleList()
+        }
     }
 }
 

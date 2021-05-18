@@ -26,16 +26,21 @@ struct HomeView: View {
                     }
                 }
                 
-                ForEach(0..<20){ index in
-                    NavigationLink(destination: ScheduleDetailView()){
-                        ScheduleCell(title: "作业\(index)")
+                ForEach(binding.scheduleArray.wrappedValue){ obj in
+                    NavigationLink(destination: ScheduleDetailView(obj: obj)){
+                        ScheduleCell(obj: obj)
                     }
-                    
                 }
+                
+                Spacer()
             }.padding(20)
+            .frame(maxWidth: .infinity, minHeight: UIScreen.main.bounds.height)
             .background(Color(.secondarySystemBackground))
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
         .navigationBarTitle(Date().toString("yyyy年MM月dd日"), displayMode: .automatic)
+        .onAppear{
+            Store.shared.loadScheduleList()
+        }
     }
 }
 
@@ -116,18 +121,52 @@ struct CourseCell: View {
 
 
 struct ScheduleCell: View {
-    var title: String
+    var obj: LCObject
+    
+    var course: LCObject?{
+        obj.get("coursePointer") as? LCObject
+    }
+    
+    var courseName: String{
+        let course = obj.get("coursePointer") as? LCObject
+        return course?.get("courseName")?.stringValue ?? ""
+    }
+    
+    var mColor: MColor{
+        let tag = course?.get("colorTag")?.intValue ?? 0
+        return mColorArray[tag]
+    }
+    
     var body: some View {
-        HStack{
-            Color(.orange).frame(width: 10)
+        HStack(spacing: 5){
+            mColor.color.frame(width: 10)
+            VStack(alignment: .leading, spacing: 10){
+                
+                Text(obj.get("content")?.stringValue ?? "").bold()
+                
+                Text("所属课程：" + courseName)
+                    .font(.system(size: 14))
+                    .foregroundColor(Color(.secondaryLabel))
+                
+                Text(obj.get("startDate")?.dateValue?.toString() ?? "")
+                    .font(.system(size: 14))
+                    .foregroundColor(Color(.secondaryLabel))
+                
+            }.lineLimit(1)
             
-            Text(title)
             Spacer()
             
-            RoundedRectangle(cornerRadius: 2).strokeBorder(Color(.label), lineWidth: 1.0, antialiased: true)
-                .frame(width: 16, height: 16)
+            Group{
+            if obj.get("isFinish")?.boolValue ?? false{
+                Text("已完成")
+                    .foregroundColor(Color(.systemGreen))
+            }else{
+                Text("未完成")
+                    .foregroundColor(Color(.systemRed))
+            }
+            }.font(.system(size: 14))
             
-        }.frame(height: 84)
+        }.frame(height: 104)
         .padding(.trailing, 20)
         .foregroundColor(Color(.label))
         .background(Color(.systemBackground))

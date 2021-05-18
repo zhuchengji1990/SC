@@ -70,7 +70,6 @@ struct AddScoreView: View {
                     self.userArray = array
                 }
             }
-            
         }
         .sheet(isPresented: $isShowUser, content: {
             UserView(array: self.userArray) { user in
