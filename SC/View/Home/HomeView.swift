@@ -1,20 +1,28 @@
 //
 //  HomeView.swift
 //  SC
-//Date().toCNString()
+//
 //  Created by 沉寂 on 2021/3/22.
 //
 
 import SwiftUI
+import LeanCloud
 
 struct HomeView: View {
+    @EnvironmentObject var store: Store
+    var binding: Binding<AppState.Home>{
+        $store.appState.home
+    }
+    
+    
+    @State var array = [LCObject]()
     var body: some View {
         ScrollView{
             VStack(spacing: 20) {
                 
-                ForEach(0..<3){ index in
-                    NavigationLink(destination: CourseDetailView()){
-                        CourseCell(title: "课程\(index)")
+                ForEach(binding.courseArray.wrappedValue){ obj in
+                    NavigationLink(destination: CourseDetailView(obj: obj)){
+                        CourseCell(obj: obj)
                     }
                 }
                 
@@ -65,28 +73,36 @@ struct TypeCell: View{
 
 
 struct CourseCell: View {
-    var title: String
+    var obj: LCObject
+    var mColor: MColor{
+        let tag = obj.get("colorTag")?.intValue ?? 0
+        return mColorArray[tag]
+    }
+    
+    var course: LCObject?{
+        obj.get("coursePointer") as? LCObject
+    }
+    
     var body: some View {
         VStack(spacing: 10){
             HStack{
-                Text(title).bold()
+                Text(course?.get("courseName")?.stringValue ?? "").bold()
                     .font(.system(size: 22))
                 Spacer()
-                Image(systemName: "laptopcomputer")
             }
             
             
-            Color(.orange).frame(height: 2)
+            mColor.color.frame(height: 2)
             
             HStack{
-                Text("C424").bold()
+                Text(course?.get("address")?.stringValue ?? "").bold()
                 Spacer()
             }
             
             HStack{
-                Text("今天7-8节").bold()
+                Text(course?.get("note")?.stringValue ?? "").bold()
+                Text((obj.get("type")?.intValue ?? 1).courseStr).bold()
                 Spacer()
-                Text("距离上课还有30分")
             }.font(.system(size: 14))
             .foregroundColor(Color(.secondaryLabel))
             

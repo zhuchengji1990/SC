@@ -65,14 +65,14 @@ struct MainView: View {
                     Button("发布表白", action: {
                         self.sheetItem = .confession
                     })
-                    Button("发布待办事项", action: {
-                        self.sheetItem = .schedule
-                    })
                     Button("发布公告", action: {
                         self.sheetItem = .announcement
                     })
                     Button("添加课程", action: {
                         self.sheetItem = .course
+                    })
+                    Button("发布待办事项", action: {
+                        self.sheetItem = .schedule
                     })
                 } label: {
                     Image(systemName: "plus.circle")

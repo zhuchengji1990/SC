@@ -201,6 +201,49 @@ extension Store{
             }.store(in: &bags)
     }
     
+    func addCourse(){
+        
+        let state = self.appState.addCourse
+        
+        guard let startDate = state.startDate,
+              let endDate = state.endDate else {
+            return
+        }
+        self.showHud()
+        let obj = LCObject(className: "Course")
+        try? obj.set("owner", value: self.user)
+        try? obj.set("startDate", value: startDate)
+        try? obj.set("endDate", value: endDate)
+        try? obj.set("courseName", value: state.courseName)
+        try? obj.set("teacherName", value: state.teacherName)
+        try? obj.set("phone", value: state.phone)
+        try? obj.set("type", value: state.type)
+        try? obj.set("colorTag", value: state.color.tag)
+        
+        //courseName
+        
+        
+        
+        
+        obj.savePublisher()
+            .sink { res in
+                self.hideHud()
+                
+                switch res{
+                case .success:
+                    self.appState.addCourse.isSuccess.send(true)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        self.appState.addCourse = AppState.AddCourse()
+                    }
+                    
+                    self.loadCourseList()
+                case let .failure(error):
+                    self.appState.addCourse.error = .normal(error)
+                }
+            }.store(in: &bags)
+    }
     
+    
+   
     
 }

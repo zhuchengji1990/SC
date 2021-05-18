@@ -25,9 +25,9 @@
 		AB5417462608D9B40084B7FA /* MButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5417452608D9B40084B7FA /* MButton.swift */; };
 		AB5417492608D9BA0084B7FA /* CloseBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5417482608D9BA0084B7FA /* CloseBtn.swift */; };
 		AB54174C2608DA960084B7FA /* LoadingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB54174B2608DA960084B7FA /* LoadingModifier.swift */; };
-		AB54174F2608DACF0084B7FA /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB54174E2608DACF0084B7FA /* PrivacyPolicyView.swift */; };
 		AB5417522608DADF0084B7FA /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5417512608DADF0084B7FA /* WebView.swift */; };
 		AB5417552608DC2E0084B7FA /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5417542608DC2E0084B7FA /* URLImage.swift */; };
+		AB55DCAD2653617E00F0B00B /* CourseAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55DCAC2653617E00F0B00B /* CourseAction.swift */; };
 		AB67137C264AD35700108DED /* RepairListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB67137B264AD35700108DED /* RepairListView.swift */; };
 		AB671380264ADAAC00108DED /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB67137F264ADAAC00108DED /* OverlayView.swift */; };
 		AB671383264ADE7900108DED /* LeaveListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB671382264ADE7900108DED /* LeaveListView.swift */; };
@@ -49,6 +49,7 @@
 		AB895BE32611F59100BD813B /* RepairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB895BE22611F59100BD813B /* RepairView.swift */; };
 		AB895BE62611F5AE00BD813B /* TemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB895BE52611F5AE00BD813B /* TemperatureView.swift */; };
 		AB895BE92611F6E500BD813B /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB895BE82611F6E500BD813B /* SettingView.swift */; };
+		ABA4B64F2650B64500C7DDBD /* MColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA4B64E2650B64500C7DDBD /* MColorPicker.swift */; };
 		ABB55B75264C2C1A007161DE /* TemperatureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB55B74264C2C1A007161DE /* TemperatureListView.swift */; };
 		ABBDDF152642936E00621C95 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBDDF142642936E00621C95 /* PostDetailView.swift */; };
 		ABDE4F802625D74600993E22 /* CourseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDE4F7F2625D74600993E22 /* CourseDetailView.swift */; };
@@ -79,9 +80,9 @@
 		AB5417452608D9B40084B7FA /* MButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MButton.swift; sourceTree = "<group>"; };
 		AB5417482608D9BA0084B7FA /* CloseBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseBtn.swift; sourceTree = "<group>"; };
 		AB54174B2608DA960084B7FA /* LoadingModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingModifier.swift; sourceTree = "<group>"; };
-		AB54174E2608DACF0084B7FA /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
 		AB5417512608DADF0084B7FA /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		AB5417542608DC2E0084B7FA /* URLImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
+		AB55DCAC2653617E00F0B00B /* CourseAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseAction.swift; sourceTree = "<group>"; };
 		AB67137B264AD35700108DED /* RepairListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepairListView.swift; sourceTree = "<group>"; };
 		AB67137F264ADAAC00108DED /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 		AB671382264ADE7900108DED /* LeaveListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveListView.swift; sourceTree = "<group>"; };
@@ -103,6 +104,7 @@
 		AB895BE22611F59100BD813B /* RepairView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepairView.swift; sourceTree = "<group>"; };
 		AB895BE52611F5AE00BD813B /* TemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureView.swift; sourceTree = "<group>"; };
 		AB895BE82611F6E500BD813B /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		ABA4B64E2650B64500C7DDBD /* MColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MColorPicker.swift; sourceTree = "<group>"; };
 		ABB55B74264C2C1A007161DE /* TemperatureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureListView.swift; sourceTree = "<group>"; };
 		ABBDDF142642936E00621C95 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
 		ABDE4F7F2625D74600993E22 /* CourseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailView.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				AB7D9734260A09D8000052F2 /* UserAction.swift */,
 				AB7D9747260A18F5000052F2 /* PublishAction.swift */,
 				AB7D974B260A2091000052F2 /* DataAction.swift */,
+				AB55DCAC2653617E00F0B00B /* CourseAction.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -220,11 +223,15 @@
 		AB54171A2608BA780084B7FA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AB832DD726509F4800563125 /* Temperature */,
+				AB832DD626509F3000563125 /* Repair */,
+				AB832DD526509F1F00563125 /* Leave */,
 				AB54171B2608BA810084B7FA /* SubView */,
 				AB7D9737260A1234000052F2 /* Publish */,
 				AB54172D2608BEF70084B7FA /* MyCenter */,
 				AB54172B2608BEDC0084B7FA /* Confession */,
 				AB54172C2608BEF20084B7FA /* Schedule */,
+				ABA051202650B15A000C911E /* Course */,
 				AB54172A2608BE920084B7FA /* Home */,
 				AB5417272608BDE40084B7FA /* MainView.swift */,
 			);
@@ -255,7 +262,6 @@
 			children = (
 				AB54172E2608BF040084B7FA /* HomeView.swift */,
 				AB864FDE260B8E3B009BCBAA /* AnnouncementView.swift */,
-				ABDE4F7F2625D74600993E22 /* CourseDetailView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -271,8 +277,6 @@
 		AB54172C2608BEF20084B7FA /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
-				AB5417352608BF200084B7FA /* CourseView.swift */,
-				AB2E690F26424323009A6FB2 /* AddCourseView.swift */,
 				ABDE4F822625D75E00993E22 /* ScheduleDetailView.swift */,
 			);
 			path = Schedule;
@@ -283,16 +287,9 @@
 			children = (
 				AB5417382608BF2D0084B7FA /* MyCenterView.swift */,
 				AB5417422608D98A0084B7FA /* LoginView.swift */,
-				AB54174E2608DACF0084B7FA /* PrivacyPolicyView.swift */,
 				AB895BD62611F4C900BD813B /* QueryScoreView.swift */,
 				AB895BDC2611F50A00BD813B /* TodoListView.swift */,
-				AB895BE52611F5AE00BD813B /* TemperatureView.swift */,
-				ABB55B74264C2C1A007161DE /* TemperatureListView.swift */,
 				AB895BE82611F6E500BD813B /* SettingView.swift */,
-				AB895BE22611F59100BD813B /* RepairView.swift */,
-				AB67137B264AD35700108DED /* RepairListView.swift */,
-				AB895BDF2611F57200BD813B /* LeaveView.swift */,
-				AB671382264ADE7900108DED /* LeaveListView.swift */,
 			);
 			path = MyCenter;
 			sourceTree = "<group>";
@@ -305,6 +302,44 @@
 				AB864FD7260B80A3009BCBAA /* PublishAnnouncementView.swift */,
 			);
 			path = Publish;
+			sourceTree = "<group>";
+		};
+		AB832DD526509F1F00563125 /* Leave */ = {
+			isa = PBXGroup;
+			children = (
+				AB895BDF2611F57200BD813B /* LeaveView.swift */,
+				AB671382264ADE7900108DED /* LeaveListView.swift */,
+			);
+			path = Leave;
+			sourceTree = "<group>";
+		};
+		AB832DD626509F3000563125 /* Repair */ = {
+			isa = PBXGroup;
+			children = (
+				AB895BE22611F59100BD813B /* RepairView.swift */,
+				AB67137B264AD35700108DED /* RepairListView.swift */,
+			);
+			path = Repair;
+			sourceTree = "<group>";
+		};
+		AB832DD726509F4800563125 /* Temperature */ = {
+			isa = PBXGroup;
+			children = (
+				AB895BE52611F5AE00BD813B /* TemperatureView.swift */,
+				ABB55B74264C2C1A007161DE /* TemperatureListView.swift */,
+			);
+			path = Temperature;
+			sourceTree = "<group>";
+		};
+		ABA051202650B15A000C911E /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				AB5417352608BF200084B7FA /* CourseView.swift */,
+				ABDE4F7F2625D74600993E22 /* CourseDetailView.swift */,
+				AB2E690F26424323009A6FB2 /* AddCourseView.swift */,
+				ABA4B64E2650B64500C7DDBD /* MColorPicker.swift */,
+			);
+			path = Course;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,6 +459,7 @@
 				AB895BD72611F4C900BD813B /* QueryScoreView.swift in Sources */,
 				ABDE4F802625D74600993E22 /* CourseDetailView.swift in Sources */,
 				AB5417392608BF2D0084B7FA /* MyCenterView.swift in Sources */,
+				AB55DCAD2653617E00F0B00B /* CourseAction.swift in Sources */,
 				AB5417552608DC2E0084B7FA /* URLImage.swift in Sources */,
 				AB895BE92611F6E500BD813B /* SettingView.swift in Sources */,
 				AB7D9748260A18F5000052F2 /* PublishAction.swift in Sources */,
@@ -454,7 +490,6 @@
 				AB7D9735260A09D8000052F2 /* UserAction.swift in Sources */,
 				AB2E691026424323009A6FB2 /* AddCourseView.swift in Sources */,
 				AB7D9744260A17E7000052F2 /* PublishScheduleView.swift in Sources */,
-				AB54174F2608DACF0084B7FA /* PrivacyPolicyView.swift in Sources */,
 				AB895BDD2611F50A00BD813B /* TodoListView.swift in Sources */,
 				AB5417122608BA4E0084B7FA /* AppState.swift in Sources */,
 				AB895BE02611F57200BD813B /* LeaveView.swift in Sources */,
@@ -464,6 +499,7 @@
 				AB54174C2608DA960084B7FA /* LoadingModifier.swift in Sources */,
 				AB864FDF260B8E3B009BCBAA /* AnnouncementView.swift in Sources */,
 				AB5417332608BF130084B7FA /* ConfessionView.swift in Sources */,
+				ABA4B64F2650B64500C7DDBD /* MColorPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

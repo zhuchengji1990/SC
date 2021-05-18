@@ -1,14 +1,14 @@
 //
-//  LeaveListView.swift
+//  TemperatureListView.swift
 //  SC
 //
-//  Created by 沉寂 on 2021/5/11.
+//  Created by 沉寂 on 2021/5/12.
 //
 
 import SwiftUI
 import LeanCloud
 
-struct LeaveListView: View {
+struct TemperatureListView: View {
     @State var objArray: [LCObject] = []
     var body: some View {
         ScrollView{
@@ -22,7 +22,7 @@ struct LeaveListView: View {
         .navigationBarTitle("申请记录", displayMode: .inline)
         .onAppear{
             guard let user = Store.shared.user else { return }
-            let query = LCQuery(className: "Leave")
+            let query = LCQuery(className: "Temperature")
             try? query.where("owner", .equalTo(user))
             try? query.where("createdAt", .descending)
             query.find { res in
@@ -37,9 +37,9 @@ struct LeaveListView: View {
     }
 }
 
-struct LeaveListView_Previews: PreviewProvider {
+struct TemperatureListView_Previews: PreviewProvider {
     static var previews: some View {
-        LeaveListView()
+        TemperatureListView()
     }
 }
 
@@ -67,3 +67,4 @@ private struct InfoCell: View{
         .background(Color(.systemBackground))
     }
 }
+

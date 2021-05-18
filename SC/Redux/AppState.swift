@@ -53,6 +53,8 @@ extension AppState{
     }
     
     struct Home {
+        var courseArray: [LCObject] = []
+        var scheduleArray: [LCObject] = []
         
     }
     
@@ -111,9 +113,16 @@ extension AppState{
         var courseName = ""
         var teacherName = ""
         var phone = ""
-        var type = ""
-        var time = ""
-        var color = ""
+        var address = ""
+        
+        var week: [Int] = []
+        var weekday = 1
+        var type = 1
+        
+        var startDate: Date?
+        var endDate: Date?
+        
+        var color: MColor = mColorArray[0]
         
         var isSuccess = PassthroughSubject<Bool, Never>()
         var error: AppError?

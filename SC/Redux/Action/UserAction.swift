@@ -116,6 +116,9 @@ extension Store{
         
         loadPosts()
         
+        loadCourseList()
+        loadScheduleList()
+        
         
     }
 }

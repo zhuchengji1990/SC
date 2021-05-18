@@ -228,3 +228,28 @@ extension AnyCancellable {
 extension LCObject: Identifiable{
     public var id: String { self.objectId?.stringValue ?? UUID().uuidString }
 }
+
+
+
+extension Int{
+    var courseStr: String{
+        switch self {
+        case 1: return "上午 第1、2节"
+        case 2: return "上午 第3、4节"
+        case 3: return "下午 第5、6节"
+        default: return "下午 第7、8节"
+        }
+    }
+    
+    var weekStr: String{
+        switch self {
+        case 1: return "周一"
+        case 2: return "周二"
+        case 3: return "周三"
+        case 4: return "周四"
+        case 5: return "周五"
+        case 6: return "周六"
+        default: return "周日"
+        }
+    }
+}
