@@ -10,6 +10,20 @@ import LeanCloud
 
 extension Store{
     
+    func loadCourseList(){
+        
+        //加载今日的课程
+        self.loadCourse(isToday: true) { array in
+            self.appState.home.courseArray = array
+        }
+        
+        //加载全部课程
+        self.loadCourse(isToday: false) { array in
+            self.appState.course.courseArray = array
+        }
+        
+    }
+    
     func loadCourse(isToday: Bool = false, completion: @escaping ([LCObject]) -> Void){
         self.showHud()
         let query = LCQuery(className: "CoursePlan")
@@ -32,13 +46,7 @@ extension Store{
         }
     }
     
-    func loadCourseList(){
-        
-        self.loadCourse(isToday: true) { array in
-            self.appState.home.courseArray = array
-        }
-        
-    }
+   
     
     func loadScheduleList(){
         guard let user = Store.shared.user else { return }

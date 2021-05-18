@@ -16,6 +16,7 @@ struct AppState {
     var hud = Hud()
     var main = Main()
     var home = Home()
+    var course = Course()
     
     var post = Post()
     
@@ -55,9 +56,11 @@ extension AppState{
     struct Home {
         var courseArray: [LCObject] = []
         var scheduleArray: [LCObject] = []
-        
     }
     
+    struct Course {
+        var courseArray: [LCObject] = []
+    }
     
     struct Post {
         var array: [LCObject] = []

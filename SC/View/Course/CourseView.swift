@@ -11,23 +11,16 @@ import LeanCloud
 struct CourseView: View {
     
     @EnvironmentObject var store: Store
-    var binding: Binding<AppState.Post>{
-        $store.appState.post
+    var binding: Binding<AppState.Course>{
+        $store.appState.course
     }
-    
-    @State var array = [LCObject]()
     
     var body: some View {
         List{
-            ForEach(array, id: \.self) { obj in
+            ForEach(binding.courseArray.wrappedValue, id: \.self) { obj in
                 InfoCell(obj: obj)
             }
         }.frame(maxWidth: .infinity, maxHeight: .infinity).navigationBarTitle("课表", displayMode: .inline)
-        .onAppear{
-            Store.shared.loadCourse { array in
-                self.array = array
-            }
-        }
     }
 }
 
