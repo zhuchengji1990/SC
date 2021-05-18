@@ -33,6 +33,13 @@ struct MyCenterView: View {
                 }
                 
                 VStack(spacing: 0){
+                    
+                    if $store.role.wrappedValue != .student{
+                        NavigationLink(destination: AddScoreView()){
+                            InfoCell(title: "录入成绩", imgName: "square.and.pencil")
+                        }
+                    }
+                    
                     NavigationLink(destination: QueryScoreView()){
                         InfoCell(title: "成绩查询", imgName: "doc.text.magnifyingglass")
                     }

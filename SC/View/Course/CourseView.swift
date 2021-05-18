@@ -18,9 +18,12 @@ struct CourseView: View {
     var body: some View {
         List{
             ForEach(binding.courseArray.wrappedValue, id: \.self) { obj in
-                InfoCell(obj: obj)
+                NavigationLink(destination: CourseDetailView(obj: obj)){
+                    CourseCellView(obj: obj)
+                }
             }
-        }.frame(maxWidth: .infinity, maxHeight: .infinity).navigationBarTitle("课表", displayMode: .inline)
+        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+        .navigationBarTitle("课表", displayMode: .inline)
     }
 }
 
@@ -33,7 +36,10 @@ struct ScheduleView_Previews: PreviewProvider {
 }
 
 
-private struct InfoCell: View{
+
+
+
+private struct CourseCellView: View{
     var obj: LCObject
     var course: LCObject?{
         obj.get("coursePointer") as? LCObject

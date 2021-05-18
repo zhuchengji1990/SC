@@ -13,18 +13,18 @@ extension Store{
     func loadCourseList(){
         
         //加载今日的课程
-        self.loadCourse(isToday: true) { array in
+        self.loadCoursePlan(isToday: true) { array in
             self.appState.home.courseArray = array
         }
         
         //加载全部课程
-        self.loadCourse(isToday: false) { array in
+        self.loadCoursePlan(isToday: false) { array in
             self.appState.course.courseArray = array
         }
         
     }
     
-    func loadCourse(isToday: Bool = false, completion: @escaping ([LCObject]) -> Void){
+    func loadCoursePlan(isToday: Bool = false, completion: @escaping ([LCObject]) -> Void){
         self.showHud()
         let query = LCQuery(className: "CoursePlan")
         try? query.where("coursePointer", .included)
@@ -47,6 +47,21 @@ extension Store{
     }
     
    
+    func loadCourse(completion: @escaping ([LCObject]) -> Void){
+        self.showHud()
+        let query = LCQuery(className: "Course")
+        try? query.where("courseName", .ascending)
+        query.find { res in
+            self.hideHud()
+            switch res{
+            case let .success(array):
+                completion(array)
+            case let .failure(error):
+                print(error)
+            }
+        }
+    }
+    
     
     func loadScheduleList(){
         guard let user = Store.shared.user else { return }
@@ -62,7 +77,6 @@ extension Store{
             }
         }
     }
-    
     
     
     

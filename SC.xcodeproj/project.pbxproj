@@ -27,6 +27,9 @@
 		AB54174C2608DA960084B7FA /* LoadingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB54174B2608DA960084B7FA /* LoadingModifier.swift */; };
 		AB5417522608DADF0084B7FA /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5417512608DADF0084B7FA /* WebView.swift */; };
 		AB5417552608DC2E0084B7FA /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5417542608DC2E0084B7FA /* URLImage.swift */; };
+		AB55B3962653A2170057EE4B /* AddScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55B3952653A2170057EE4B /* AddScoreView.swift */; };
+		AB55B3992653A22E0057EE4B /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55B3982653A22E0057EE4B /* UserView.swift */; };
+		AB55B39C2653A9BC0057EE4B /* AddScoreDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55B39B2653A9BC0057EE4B /* AddScoreDetailView.swift */; };
 		AB55DCAD2653617E00F0B00B /* CourseAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55DCAC2653617E00F0B00B /* CourseAction.swift */; };
 		AB67137C264AD35700108DED /* RepairListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB67137B264AD35700108DED /* RepairListView.swift */; };
 		AB671380264ADAAC00108DED /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB67137F264ADAAC00108DED /* OverlayView.swift */; };
@@ -82,6 +85,9 @@
 		AB54174B2608DA960084B7FA /* LoadingModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingModifier.swift; sourceTree = "<group>"; };
 		AB5417512608DADF0084B7FA /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		AB5417542608DC2E0084B7FA /* URLImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
+		AB55B3952653A2170057EE4B /* AddScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScoreView.swift; sourceTree = "<group>"; };
+		AB55B3982653A22E0057EE4B /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		AB55B39B2653A9BC0057EE4B /* AddScoreDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScoreDetailView.swift; sourceTree = "<group>"; };
 		AB55DCAC2653617E00F0B00B /* CourseAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseAction.swift; sourceTree = "<group>"; };
 		AB67137B264AD35700108DED /* RepairListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepairListView.swift; sourceTree = "<group>"; };
 		AB67137F264ADAAC00108DED /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
@@ -287,9 +293,12 @@
 			children = (
 				AB5417382608BF2D0084B7FA /* MyCenterView.swift */,
 				AB5417422608D98A0084B7FA /* LoginView.swift */,
-				AB895BD62611F4C900BD813B /* QueryScoreView.swift */,
 				AB895BDC2611F50A00BD813B /* TodoListView.swift */,
 				AB895BE82611F6E500BD813B /* SettingView.swift */,
+				AB895BD62611F4C900BD813B /* QueryScoreView.swift */,
+				AB55B3952653A2170057EE4B /* AddScoreView.swift */,
+				AB55B39B2653A9BC0057EE4B /* AddScoreDetailView.swift */,
+				AB55B3982653A22E0057EE4B /* UserView.swift */,
 			);
 			path = MyCenter;
 			sourceTree = "<group>";
@@ -461,6 +470,7 @@
 				AB5417392608BF2D0084B7FA /* MyCenterView.swift in Sources */,
 				AB55DCAD2653617E00F0B00B /* CourseAction.swift in Sources */,
 				AB5417552608DC2E0084B7FA /* URLImage.swift in Sources */,
+				AB55B3992653A22E0057EE4B /* UserView.swift in Sources */,
 				AB895BE92611F6E500BD813B /* SettingView.swift in Sources */,
 				AB7D9748260A18F5000052F2 /* PublishAction.swift in Sources */,
 				AB7D973D260A1306000052F2 /* ImagePicker.swift in Sources */,
@@ -493,9 +503,11 @@
 				AB895BDD2611F50A00BD813B /* TodoListView.swift in Sources */,
 				AB5417122608BA4E0084B7FA /* AppState.swift in Sources */,
 				AB895BE02611F57200BD813B /* LeaveView.swift in Sources */,
+				AB55B39C2653A9BC0057EE4B /* AddScoreDetailView.swift in Sources */,
 				AB5417462608D9B40084B7FA /* MButton.swift in Sources */,
 				AB864FD8260B80A3009BCBAA /* PublishAnnouncementView.swift in Sources */,
 				ABDE4F832625D75E00993E22 /* ScheduleDetailView.swift in Sources */,
+				AB55B3962653A2170057EE4B /* AddScoreView.swift in Sources */,
 				AB54174C2608DA960084B7FA /* LoadingModifier.swift in Sources */,
 				AB864FDF260B8E3B009BCBAA /* AnnouncementView.swift in Sources */,
 				AB5417332608BF130084B7FA /* ConfessionView.swift in Sources */,

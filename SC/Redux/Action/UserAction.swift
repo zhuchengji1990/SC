@@ -118,7 +118,21 @@ extension Store{
         
         loadCourseList()
         loadScheduleList()
-        
-        
     }
+    
+    func loadUserList(completion: @escaping ([LCObject]) -> Void){
+        self.showHud()
+        let query = LCQuery(className: "_User")
+        query.find { res in
+            self.hideHud()
+            switch res{
+            case let .success(array):
+                completion(array)
+            case let .failure(error):
+                print(error)
+            }
+        }
+    }
+    
+    
 }
