@@ -17,10 +17,13 @@ class Store: ObservableObject{
     
     @Published var appState = AppState()
     
+    @Published var isUnLogin = true
+    
+    
     enum Role: String{
-        case student = "学生"
-        case teacher = "教师"
-        case admin = "管理员"
+        case student = "学生" //数据库role字段，0
+        case teacher = "教师" //数据库role字段，1
+        case admin = "管理员" //数据库role字段，2
     }
     
     @Published var role: Role = .student

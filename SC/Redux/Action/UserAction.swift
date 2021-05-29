@@ -108,9 +108,24 @@ extension Store{
         if let user = LCApplication.default.currentUser{
             state.isLogin = true
             state.name = user.get("name")?.stringValue ?? "无名氏"
+            
+            //设置角色
+            let role = user.get("role")?.intValue ?? 0
+            switch role {
+            case 1:
+                self.role = .teacher
+            case 2:
+                self.role = .admin
+            default:
+                self.role = .student
+            }
+            
+            self.isUnLogin = false
         }else{
             state.isLogin = false
             state.name = "点击登录"
+            self.isUnLogin = true
+            self.role = .student
         }
         self.appState.myCenter = state
     }

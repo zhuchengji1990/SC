@@ -44,9 +44,30 @@ struct MainView: View {
                     default:    MyCenterView()
                     }
                 }.frame(maxWidth: .infinity, maxHeight: .infinity)
+                .fullScreenCover(isPresented: $store.isUnLogin) {
+                    LoginView().environmentObject(Store.shared)
+                    
+                }
                 
                 MTabView(selection: binding.selection)
+                    .sheet(item: $sheetItem) { (item) in
+                        Group{
+                            switch item{
+                            case .confession:
+                                PublishConfessionView()
+                            case .schedule:
+                                PublishScheduleView()
+                            case .announcement:
+                                PublishAnnouncementView()
+                            case .course:
+                                AddCourseView()
+                            default:
+                                EmptyView()
+                            }
+                        }.environmentObject(Store.shared)
+                    }
             }
+            
             .navigationBarItems(
                 leading: Menu {
                     Button("学生", action: {
@@ -78,22 +99,15 @@ struct MainView: View {
             )
         }.navigationViewStyle(StackNavigationViewStyle())
         .loading(isShowing: hud.isShowing)
-        .sheet(item: $sheetItem) { (item) in
-            Group{
-                switch item{
-                case .confession:
-                    PublishConfessionView()
-                case .schedule:
-                    PublishScheduleView()
-                case .announcement:
-                    PublishAnnouncementView()
-                case .course:
-                    AddCourseView()
-                default:
-                    EmptyView()
-                }
-            }.environmentObject(Store.shared)
-        }
+        
+        
+        
+        //        .fullScreenCover(isPresented: $store.isLogin){
+        //            LoginView().environmentObject(Store.shared)
+        //        }
+        
+        
+        
     }
 }
 

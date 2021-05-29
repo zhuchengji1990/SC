@@ -45,12 +45,14 @@ struct SignUpView: View {
             HStack{
                 Image(systemName: "number.circle")
                 TextField("请输入10位学号", text: binding.studentNumber)
+                    .keyboardType(.numberPad)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .frame(height: 44)
             }
             HStack{
                 Image(systemName: "greetingcard")
                 TextField("请输入身份证号", text: binding.idNumber)
+                    .keyboardType(.numberPad)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .frame(height: 44)
             }

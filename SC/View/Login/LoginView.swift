@@ -45,9 +45,9 @@ struct LoginView: View {
                 self.presentationMode.wrappedValue.dismiss()
             }
             .navigationBarTitle(binding.selection.wrappedValue == 0 ? "登录" : "注册", displayMode: .inline)
-            .navigationBarItems(leading: CloseBtn{
-                self.presentationMode.wrappedValue.dismiss()
-            })
+//            .navigationBarItems(leading: CloseBtn{
+//                self.presentationMode.wrappedValue.dismiss()
+//            })
         }.loading(isShowing: hud.isShowing)
     }
 }

@@ -108,7 +108,7 @@ extension AppState{
         var name = ""{ didSet{ check() } }
         var studentNumber = ""{
             didSet{
-                studentNumber = String(oldValue.prefix(10))
+                studentNumber = String(studentNumber.prefix(10))
                 check()
             }
         }
