@@ -68,7 +68,10 @@ struct MainView: View {
                     }
             }
             
+            
+            
             .navigationBarItems(
+                //如果不想要点击切换角色功能，把下面leading: Menu{}换成 leading: Text($store.role.wrappedValue.rawValue)
                 leading: Menu {
                     Button("学生", action: {
                         $store.role.wrappedValue = .student
@@ -82,7 +85,8 @@ struct MainView: View {
                 } label: {
                     Text($store.role.wrappedValue.rawValue)
                         .frame(width: 64, height: 44)
-                }, trailing: Menu {
+                },
+                trailing: Menu {
                     Button("发布表白", action: {
                         self.sheetItem = .confession
                     })
