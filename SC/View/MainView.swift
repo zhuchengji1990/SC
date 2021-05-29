@@ -103,15 +103,6 @@ struct MainView: View {
             )
         }.navigationViewStyle(StackNavigationViewStyle())
         .loading(isShowing: hud.isShowing)
-        
-        
-        
-        //        .fullScreenCover(isPresented: $store.isLogin){
-        //            LoginView().environmentObject(Store.shared)
-        //        }
-        
-        
-        
     }
 }
 
